@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	
+	string str = "ABCDEFGHIJIHGFEDCBA";
+	int l =  str.length();
+	cout<<str;
+	//cout<<l/2;
+	int a=l/2,b=l/2;
+	for(int i=0; i<(l/2); i++){
+		cout<<endl;
+		//cout<<str[0];
+		str[a]=str[b]=' ';
+		a--;b++;
+		cout<<str;
+	}
+	return 0;
+}
+/*
+OUTPUT:
+
+ABCDEFGHIJIHGFEDCBA
+ABCDEFGHI IHGFEDCBA
+ABCDEFGH   HGFEDCBA
+ABCDEFG     GFEDCBA
+ABCDEF       FEDCBA
+ABCDE         EDCBA
+ABCD           DCBA
+ABC             CBA
+AB               BA
+A                 A
+
+*/
