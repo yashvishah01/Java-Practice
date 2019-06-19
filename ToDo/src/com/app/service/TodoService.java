@@ -2,6 +2,7 @@ package com.app.service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -73,11 +74,11 @@ public class TodoService {
 				return list;
 			}
 			
-			public List<Todo> sort(Predicate<Todo> predicate){
+			public List<Todo> sort(Comparator<Todo> com){
 						List<Todo> sort_list=
 						todos
 						.stream()
-						.filter(predicate)
+						.sorted(com)
 						.collect(Collectors.toList());
 						return sort_list;
 					}

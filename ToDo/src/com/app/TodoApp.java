@@ -1,6 +1,7 @@
 package com.app;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import com.app.service.*;
 import com.app.model.Todo; 
@@ -42,7 +43,9 @@ public class TodoApp {
 		List<Todo> list_com = todo.filter(complete->complete.isCompleted());
 		System.out.println(list_com);
 		
-		
+		Comparator<Todo> com = (o1,o2)->Integer.compare(o1.getId(), o2.getId());
+		List<Todo> sort_list = todo.sort(com);
+		System.out.println(sort_list);
 		
 	}
 }
