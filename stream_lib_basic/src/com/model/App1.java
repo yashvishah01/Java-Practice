@@ -15,6 +15,11 @@ public class App1 {
 					new Product(6,"item-6",6000.00),
 					new Product(7,"item-7",7000.00)
 					);
+			double total=0.0;
+			for(Product list: Products) {
+				if(list.getPrice()>3000)	
+					total = total+list.getPrice();
+			}
 			
 			Products
 			.stream()
