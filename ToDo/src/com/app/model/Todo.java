@@ -8,12 +8,13 @@ public class Todo {
 	private boolean completed;
 	private LocalDateTime date;
 	
-	public Todo(int id, String title, boolean completed, LocalDateTime date) {
+	// no need to pass completed and date
+	public Todo(int id, String title/*,boolean completed, LocalDateTime date*/) {
 		super();
 		this.id = id;
 		this.title = title;
-		this.completed = completed;
-		this.date = date;
+		this.completed = false;	//false
+		this.date = LocalDateTime.now();	//LocalDateTime.now();
 	}
 
 	public int getId() {
@@ -31,10 +32,11 @@ public class Todo {
 	public LocalDateTime getDate() {
 		return date;
 	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
+	
+	// not required
+//	public void setId(int id) {
+//		this.id = id;
+//	}
 
 	public void setTitle(String title) {
 		this.title = title;
@@ -43,10 +45,10 @@ public class Todo {
 	public void setCompleted(boolean completed) {
 		this.completed = completed;
 	}
-
-	public void setDate(LocalDateTime date) {
-		this.date = date;
-	}
+	// not required
+//	public void setDate(LocalDateTime date) {
+//		this.date = date;
+//	}
 
 	@Override
 	public String toString() {
