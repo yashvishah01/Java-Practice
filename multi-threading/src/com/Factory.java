@@ -7,8 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Factory {
 	
-	private static int []buffer;
-	private static int count;
+
 //	private static boolean evencheck = false;
 	private static Object lock = new Object();
 	static List<Integer> list = new ArrayList<>();
@@ -109,9 +108,7 @@ public class Factory {
 		}
 	}
 	
-	public static void main(String[] args) {
-		buffer = new int[100];
-		count = 0;
+	public static void main(String[] args) throws InterruptedException {
 		
 		EvenFactory evenFactory = new EvenFactory();
 		OddFactory oddFactory = new OddFactory();
@@ -130,7 +127,10 @@ public class Factory {
 		thread1.start();
 		thread2.start();
 		
-		//System.out.println(list);
+		
+		//because 
+		TimeUnit.SECONDS.sleep(10);
+		System.out.println(list);
 	}
 }
 }
