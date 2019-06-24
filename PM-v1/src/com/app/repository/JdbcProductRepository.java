@@ -116,7 +116,7 @@ public class JdbcProductRepository implements ProductRepository{
 		try {
 			connection = SqlConnectionFactory.getConnection();
 
-			String sql = "update PM.PRODUCTS p set p.price=? where id=?";
+			String sql = "update PRODUCTS p set p.price=? where id=?";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setDouble(1, price);
 			ps.setInt(2, id);
@@ -147,7 +147,7 @@ public class JdbcProductRepository implements ProductRepository{
 		try {
 			connection = SqlConnectionFactory.getConnection();
 
-			String sql = "select * from PM.PRODUCTS ";
+			String sql = "select * from PRODUCTS ";
 			PreparedStatement ps = connection.prepareStatement(sql);
 
 			ResultSet rs = ps.executeQuery();
